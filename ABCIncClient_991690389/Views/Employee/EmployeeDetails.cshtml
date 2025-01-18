@@ -1,0 +1,54 @@
+﻿@model ABCIncClient_991690389.Models.ViewModels.EmployeeVM
+
+@{
+    ViewData["Title"] = "EmployeeDetails";
+}
+
+<h1>EmployeeDetails</h1>
+
+<div>
+    <h4>EmployeeVM</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eEmploymentType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eEmploymentType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eDependentCount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eDependentCount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eSalary)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eSalary)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "EditEmployee", new { id = Model.eId }) |
+    <a asp-action="Index">Back to List</a>
+</div>

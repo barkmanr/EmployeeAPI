@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ABCIncClient_991690389.Models.ViewModels.EmployeeVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="AddEmployee">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.eId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eEmploymentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eDependentCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eSalary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.eId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eEmploymentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eDependentCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eSalary)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditEmployee", new { id=item.eId }) |
+                @Html.ActionLink("Details", "EmployeeDetails", new { id=item.eId}) |
+                @Html.ActionLink("Delete", "DeleteEmployee", new { id = item.eId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

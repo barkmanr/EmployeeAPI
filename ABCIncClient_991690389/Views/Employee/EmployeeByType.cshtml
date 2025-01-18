@@ -1,0 +1,60 @@
+﻿@model ABCIncClient_991690389.Models.ViewModels.SearchView<string>
+
+@{
+    ViewData["Title"] = "EmployeeByType";
+}
+
+<h1>EmployeeByType</h1>
+
+@using (Html.BeginForm("EmployeeByType", "Employee", FormMethod.Post)) 
+{
+    @Html.Label("Enter Employee Type")
+    @Html.TextBoxFor(e => e.Search)
+}
+
+@if (Model != null && Model.Emps != null && Model.Emps.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Emps[0].eId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Emps[0].eName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Emps[0].eEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Emps[0].eEmploymentType)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Emps)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eEmploymentType)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditEmployee", new { id = item.eId }) |
+                        @Html.ActionLink("Details", "EmployeeDetails", new { id = item.eId }) |
+                        @Html.ActionLink("Delete", "DeleteEmployee", new { id = item.eId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

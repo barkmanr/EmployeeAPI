@@ -1,0 +1,6 @@
+@ABCIncAPI_991690389_HostAddress = http://localhost:5288
+
+GET {{ABCIncAPI_991690389_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
